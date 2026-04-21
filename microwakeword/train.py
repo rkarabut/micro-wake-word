@@ -151,7 +151,7 @@ def validate_nonstreaming(config, data_processor, model, test_set):
 
         # Use trapezoid rule to estimate the area under the curve, then divide by 2.0 to get the average recall
         average_viable_recall = (
-            np.trapz(np.flip(y_coordinates), np.flip(x_coordinates)) / 2.0
+            np.trapezoid(np.flip(y_coordinates), np.flip(x_coordinates)) / 2.0
         )
 
         metrics["recall_at_no_faph"] = recall_at_no_faph
